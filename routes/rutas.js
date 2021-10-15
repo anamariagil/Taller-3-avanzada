@@ -1,21 +1,14 @@
-const { Router }= require('express')
+const { Router } = require('express')
+const rutas = Router();
 
-const rutas=Router()
+const { registrarReserva } = require('../controllers/controlador.js')
+const { buscarReserva } = require('../controllers/controlador.js')
+const { editarReserva } = require('../controllers/controlador.js')
+const { eliminarReserva } = require('../controllers/controlador.js')
 
-rutas.get('/hotel', function (req, res) {
-    res.send('Get')
-})
+rutas.get('/hotel:id', buscarReserva)
+rutas.post('/hotel', registrarReserva)
+rutas.put('/hotel:id', editarReserva)
+rutas.delete('/hotel:id', eliminarReserva)
 
-rutas.post('/hotel', function (req, res) {
-    res.send('Post')
-})
-
-rutas.put('/hotel', function (req, res) {
-    res.send('Put')
-})
-
-rutas.delete('/hotel', function (req, res) {
-    res.send('Delete')
-})
-
-module.exports=rutas
+module.exports = rutas
