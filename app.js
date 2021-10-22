@@ -2,6 +2,6 @@ require('dotenv').config()
 
 const ServidorModelo=require("./models/ServidorModelo.js")
 
-const servidorFPC=new ServidorModelo()
+const servidor=new ServidorModelo()
 
-servidorFPC.despertarServidor()
+servidor.despertarServidor()

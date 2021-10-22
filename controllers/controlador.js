@@ -23,8 +23,10 @@ function buscarReserva(peticion = request, respuesta = response) {
 
 function editarReserva(peticion = request, respuesta = response) {
 
+    let id=peticion.params.id
+
     respuesta.json({
-        mensaje: "Editar una reserva"
+        mensaje: "Editar reserva" +id
     })
 
 }
@@ -34,7 +36,7 @@ function eliminarReserva(peticion = request, respuesta = response) {
     let id=peticion.params.id
 
     respuesta.json({
-        mensaje: "Eliminar reserva"
+        mensaje: "Eliminar reserva" +id
     })
 
 }
